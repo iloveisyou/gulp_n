@@ -1,0 +1,550 @@
+input[type='password'],
+input[type='text'],
+input[type='number'],
+input[type='tel'] {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px 0 15px;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    &:disabled {
+        border-color: #f8f8f8 !important;
+        color: #666 !important;
+        background-color: #efefef !important;
+    }
+    &.ty2 {
+        background-color: #f8f8f8;
+        border-color: #ddd;
+    }
+    &.ty3 {
+        background-color: #f8f8f8;
+        border-color: transparent;
+    }
+    &.h30 {
+        height: 30px;
+        line-height: 30px;
+    }
+    &.h25 {
+        height: 25px;
+        line-height: 23px;
+        font-size: 13px;
+    }
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+    color: #666;
+}
+
+.input-T {
+    @include Inline-block-config;
+    width: 100%;
+    .input-in {
+        width: 100%;
+        position: relative;
+        label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+        }
+
+        &.left {
+            @include Flex-start-center($display: inline-flex);
+            label {
+                flex: none;
+                margin: 0 5px 0 0;
+            }
+        }
+    }
+
+    .guide-wrap {
+        > div {
+            line-height: 1.4;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        .guide {
+            color: #afafaf;
+        }
+        .error {
+            color: red;
+        }
+        .complete {
+            color: blue;
+        }
+    }
+
+    .remove-value {
+        @include Position($top: 50%, $right: 5px);
+        margin-top: -7px;
+    }
+
+    &.big {
+        input {
+            height: 90px;
+            font-size: 22px;
+        }
+        .guide-wrap {
+            > div {
+                font-size: 18px;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &.lineOne {
+        input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid #ddd;
+        }
+    }
+
+    &.innerBt {
+        input {
+            padding-right: 150px;
+        }
+        .bt {
+            @include Position($top: 25px, $right: 20px);
+        }
+    }
+}
+
+.ui-datePicker {
+    @include Inline-block-config;
+    width: 153px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        display: block;
+        @include Position($top: 0, $right: 0);
+        @include Background($sprite: 'ico-date', $position: center center);
+        display: block;
+        border: 0;
+        width: 40px;
+        height: 40px;
+        pointer-events: none;
+    }
+    input {
+        border: 0;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        vertical-align: top;
+        color: #707070;
+        cursor: pointer;
+    }
+    .ui-datepicker-trigger {
+        @include Hide_txt;
+        @include Position($top: 0, $right: 0);
+        @include Background($sprite: 'ico-date', $size: 20px);
+        display: block;
+        border: 0;
+        width: 40px;
+        height: 38px;
+        margin: 0;
+    }
+}
+
+.datePicker-W {
+    font-size: 0;
+    @include Inline-block-config;
+    > span {
+        font-size: 14px;
+        height: 40px;
+        line-height: 40px;
+        @include Inline-block-config;
+        margin: 0 8px;
+    }
+
+    &.h30 {
+        .ui-datePicker {
+            height: 28px;
+            line-height: 26px;
+            input {
+                height: 28px;
+                line-height: 26px;
+                padding-right: 30px;
+            }
+            .ui-datepicker-trigger {
+                height: 28px;
+                width: 30px;
+            }
+        }
+        > span {
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+}
+
+.ui-timePicker {
+    @include Inline-block-config;
+    width: 153px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        display: block;
+        @include Position($top: 0, $right: 0);
+        @include Background($sprite: 'ico-time', $position: center center);
+        display: block;
+        border: 0;
+        width: 40px;
+        height: 40px;
+        pointer-events: none;
+    }
+    input {
+        border: 0;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        vertical-align: top;
+        color: #707070;
+        cursor: pointer;
+    }
+}
+
+select {
+    border-radius: 3px;
+    @include Background($sprite: 'icon_select', $position: right 13px top 50%);
+    height: 40px;
+    line-height: 40px;
+    padding: 0 35px 0 15px;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: #707070;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    &.h25 {
+        height: 26px;
+        line-height: 24px;
+        font-size: 13px;
+    }
+    &.h30 {
+        height: 30px;
+        line-height: 28px;
+    }
+    &.h50 {
+        height: 50px;
+        line-height: 48px;
+    }
+    &::-ms-expand {
+        display: none;
+    }
+    &:disabled {
+        background-color: #efefef;
+        color: #666;
+    }
+}
+
+.input-C {
+    @include Inline-block-config;
+    margin: 5px 22px 5px 0;
+    input[type='checkbox'] {
+        @include HiddenTag;
+        & + label {
+            font-size: 16px;
+            padding-left: 29px;
+            line-height: 21px;
+            display: block;
+            position: relative;
+            text-align: left;
+            cursor: pointer;
+            min-height: 20px;
+            color: #333;
+            &:before {
+                display: block;
+                content: '';
+                @include Position($top: 0, $left: 0);
+                @include Background($sprite: 'icon_check_off');
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &:checked + label {
+            &:before {
+                @include Background($sprite: 'icon_check_on');
+            }
+        }
+        &:disabled + label {
+            &:before {
+                @include Background($sprite: 'icon_check_disable');
+            }
+        }
+    }
+    &.noTxt {
+        margin: 0;
+        input[type='checkbox'] + label {
+            padding-left: 20px;
+        }
+    }
+    &.big {
+        input[type='checkbox'] {
+            & + label {
+                font-size: 17px;
+                padding-left: 39px;
+                line-height: 31px;
+                &:before {
+                    @include Background($sprite: 'icon_check_big_off');
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            &:checked + label {
+                &:before {
+                    @include Background($sprite: 'icon_check_big_on');
+                }
+            }
+        }
+    }
+}
+
+.input-R {
+    @include Inline-block-config;
+    margin: 5px 22px 5px 0;
+    input[type='radio'] {
+        @include HiddenTag;
+        & + label {
+            font-size: 16px;
+            padding-left: 29px;
+            line-height: 21px;
+            display: block;
+            position: relative;
+            text-align: left;
+            cursor: pointer;
+            min-height: 20px;
+            color: #333;
+            &:before {
+                display: block;
+                content: '';
+                @include Position($top: 0, $left: 0);
+                @include Background($sprite: 'icon_radio_off');
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &:checked + label {
+            &:before {
+                @include Background($sprite: 'icon_radio_on');
+            }
+        }
+    }
+    &.noTxt {
+        margin: 0;
+        input[type='checkbox'] + label {
+            padding-left: 20px;
+        }
+    }
+}
+
+.textarea-W {
+    position: relative;
+    width: 100%;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    padding: 20px 20px 25px;
+    border-radius: 3px;
+    textarea {
+        @include CustumScroll($minus: 5px);
+        width: 100%;
+        line-height: 1.5;
+        resize: none;
+        font-size: 14px;
+    }
+    &.disable {
+        background: #efefef;
+        color: #666;
+        pointer-events: none;
+    }
+    .textarea-guide {
+        @include Position($bottom: 5px, $left: 20px);
+        color: #58595b;
+        font-size: 14px;
+    }
+}
+
+.file-upload {
+    position: relative;
+    display: inline-block;
+    font-size: 0;
+    input[type='file'] {
+        @include HiddenTag;
+    }
+    label {
+        display: inline-block;
+        cursor: pointer;
+    }
+    .item-text {
+        @include Inline-block-config;
+        height: 30px;
+        line-height: 28px;
+        padding: 0 30px 0 15px;
+        border-radius: 3px;
+        background-color: #f1f3f4;
+        font-size: 14px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        position: relative;
+        .remove-value {
+            @include Position($top: 50%, $right: 10px);
+            margin-top: -8px;
+            display: none;
+        }
+        .text-value {
+            @include Ellipsis($w: 100%, $lines: 1);
+            height: 28px;
+        }
+    }
+}
+
+.toggle-W {
+    @include Inline-block-config;
+    position: relative;
+    height: 16px;
+    width: 34px;
+    .toggle {
+        position: relative;
+        display: inline-block;
+    }
+    input {
+        height: 16px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 20px;
+    }
+    .normal label {
+        background: #f04040;
+    }
+    input:checked + label:before {
+        left: 14px;
+        border-color: #f04040;
+    }
+    input:checked + label {
+        background: #f04040;
+    }
+    .normal label:before {
+        content: '';
+        position: absolute;
+        border: none;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        transform: rotate(-25deg);
+    }
+    .normal label:after {
+        content: '';
+        position: absolute;
+        background: transparent;
+        height: 100%;
+        border-radius: 30px;
+        top: 0px;
+        width: 100%;
+        left: 0px;
+        height: 16px;
+        z-index: 0;
+    }
+
+    label.toggle-item {
+        width: 34px;
+        background: #b4b8bf;
+        height: 16px;
+        display: inline-block;
+        border-radius: 50px;
+        position: relative;
+        transition: all 0.3s ease;
+        transform-origin: 20% center;
+        cursor: pointer;
+    }
+    label.toggle-item:before {
+        content: '';
+        position: absolute;
+        display: block;
+        transition: all 0.2s ease;
+        width: 20px;
+        height: 20px;
+        top: -2px;
+        left: 0px;
+        border-radius: 100%;
+        transition: 0.3s ease;
+        border: 1px solid #b4b8bf;
+        box-sizing: border-box;
+        //box-shadow: 0 1px 5px rgba(96, 97, 112, 0.3);
+    }
+}
+
+.input_S {
+    @include Inline-block-config;
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    position: relative;
+    input {
+        width: 100%;
+        border: 0;
+        height: 48px;
+        line-height: 46px;
+        padding-right: 50px;
+    }
+    button {
+        @include Position($top: 0px, $right: 1px);
+        @include Hide_txt;
+        @include Background($sprite: 'ico-search', $position: center center);
+        width: 48px;
+        height: 48px;
+        border: 0;
+    }
+}
+
+.radio-tab {
+    @include Flex-start-center($display: inline-flex);
+    > li {
+        + li {
+            margin-left: 5px;
+        }
+        input[type='radio'] {
+            @include HiddenTag;
+            & + label {
+                border: 1px solid #ddd;
+                height: 33px;
+                padding: 0 13px;
+                @include Flex-center-center;
+                border-radius: 50px;
+                min-width: 60px;
+            }
+            &:checked + label {
+                border-color: #3c3e26;
+                background-color: #3c3e26;
+                color: #fff;
+            }
+        }
+    }
+}
